@@ -7,6 +7,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import {appRoutingProviders, routing} from './app.routing';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {appRoutingProviders, routing} from './app.routing';
   ],
   imports: [
     BrowserModule,
-    routing /*Importamos el modulo routing*/
+    routing, /*Importamos el modulo routing*/
+    FormsModule
   ],
   providers: [
     appRoutingProviders /*Importamos el provider*/
