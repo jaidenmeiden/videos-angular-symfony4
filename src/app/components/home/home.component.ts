@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public page_title: string;
+  public pageTitle: string;
 
   constructor() {
-    this.page_title = 'Inicio';
+    this.pageTitle = 'Inicio';
   }
 
   ngOnInit() {
