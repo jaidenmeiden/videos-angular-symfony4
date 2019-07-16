@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorComponent implements OnInit {
 
-  constructor() { }
+  public page_title: string;
+
+  constructor() {
+    this.page_title = 'Error';
+  }
 
   ngOnInit() {
   }
