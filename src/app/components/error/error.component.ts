@@ -10,7 +10,7 @@ export class ErrorComponent implements OnInit {
   public pageTitle: string;
 
   constructor() {
-    this.pageTitle = 'Error';
+    this.pageTitle = 'Error 404';
   }
 
   ngOnInit() {
