@@ -12,12 +12,13 @@ export class RegisterComponent implements OnInit {
 
   public pageTitle: string;
   public user: User;
+  public status: string;
 
   constructor(
     private _userService: UserService
   ) {
     this.pageTitle = 'Registro';
-    this.user = new User(1, '', '', '', '', 'ROLE_USER', '', '', '', '');
+    this.user = new User(1, '', '', '', '', 'ROLE_USER', '', '', '');
   }
 
   ngOnInit() {
