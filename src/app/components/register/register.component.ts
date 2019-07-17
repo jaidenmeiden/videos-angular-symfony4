@@ -27,7 +27,19 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(this.user);
+    this._userService.register(this.user).subscribe(
+      response => {
+        if(response.status == 'success') {
+          this.status = 'success';
+          form.reset();
+        } else {
+          this.status = 'error';
+        }
+      }, error => {
+        this.status = 'error';
+        console.error(error);
+      }
+    );
   }
 
 }
