@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoNewComponent implements OnInit {
 
-  constructor() { }
+  public pageTitle: string;
+
+  constructor() {
+    this.pageTitle = 'Guardar nuevo video favorito';
+  }
 
   ngOnInit() {
   }

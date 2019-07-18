@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
-  constructor() { }
+  public pageTitle: string;
+
+  constructor() {
+    this.pageTitle = 'Ajustes de usuario';
+  }
 
   ngOnInit() {
   }
