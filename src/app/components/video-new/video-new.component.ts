@@ -33,7 +33,7 @@ export class VideoNewComponent implements OnInit {
   }
 
   onSubmit(form) {
-
+    console.log(this.video);
   }
 
 }

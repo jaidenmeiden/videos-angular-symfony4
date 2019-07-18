@@ -13,8 +13,8 @@ export class UserEditComponent implements OnInit {
   public pageTitle: string;
   public user: User;
   public status: string;
-  public identity: string;
-  public token: string;
+  public identity;
+  public token;
 
   constructor(
     private _userService: UserService
