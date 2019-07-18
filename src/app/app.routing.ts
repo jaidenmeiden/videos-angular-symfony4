@@ -7,6 +7,8 @@ import {LoginComponent} from './components/login/login.component';
 import {RegisterComponent} from './components/register/register.component';
 import {HomeComponent} from './components/home/home.component';
 import {ErrorComponent} from './components/error/error.component';
+import {UserEditComponent} from './components/user-edit/user-edit.component';
+import {VideoNewComponent} from './components/video-new/video-new.component';
 
 /*Creamos el path para cada uno de los componentes*/
 const appRoutes: Routes = [
@@ -15,6 +17,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'logout/:sure', component: LoginComponent},
   {path: 'registro', component: RegisterComponent},
+  {path: 'ajustes', component: UserEditComponent},
+  {path: 'guardar-favorito', component: VideoNewComponent},
   {path: 'error', component: ErrorComponent},
   {path: '**', component: ErrorComponent}
 ];
