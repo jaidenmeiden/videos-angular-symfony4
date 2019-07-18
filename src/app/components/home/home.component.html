@@ -4,7 +4,12 @@
 
   <div class="card-columns">
     <div class="card" *ngFor="let video of videos">
-      <img src="..." class="card-img-top" alt="...">
+      <div class="video-image w-100" *ngIf="video.url">
+        <img src="{{ getThumb(video.url) }}" class="card-img-top" alt="...">
+      </div>
+      <div class="video-image w-100" *ngIf="!video.url">
+        <img src="{{ getThumb(video.url, 'default') }}" class="card-img-top">
+      </div>
       <div class="card-body">
         <h5 class="card-title">{{video.title}}</h5>
         <p class="card-text">{{video.description}}</p>
