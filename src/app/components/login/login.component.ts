@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private _userService: UserService,
     private _router: Router,
-    private _route: ActivatedRoute,
+    private _route: ActivatedRoute
   ) {
     this.pageTitle = 'Login';
     this.user = new User(1, '', '', '', '', 'ROLE_USER', '', '', '');
