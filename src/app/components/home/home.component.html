@@ -1,6 +1,21 @@
 <div class="container-fluid col-md-12 mt-3" *ngIf="identity">
   <h1>{{pageTitle}}</h1>
   <hr/>
+
+  <div class="card-columns">
+    <div class="card" *ngFor="let video of videos">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{video.title}}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <a [routerLink]="['']" class="btn btn-success">Leer</a>
+        <a [routerLink]="['']" class="btn btn-warning ml-3">Editar</a>
+        <a [routerLink]="['']" class="btn btn-danger ml-3">Borrar</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid col-md-12 mt-3" *ngIf="!identity">

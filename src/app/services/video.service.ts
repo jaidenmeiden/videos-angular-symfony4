@@ -29,18 +29,18 @@ export class VideoService {
     return this._http.post(this.url + 'video/new', params, {headers: headers});
   }
 
-  listvideo(token):Observable<any> {
+  listvideos(token):Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/list', null, {headers: headers});
+    return this._http.get(this.url + 'video/list', {headers: headers});
   }
 
   getvideo(token, id):Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/detail/' + id, null, {headers: headers});
+    return this._http.get(this.url + 'video/detail/' + id, {headers: headers});
   }
 
   update(token, video):Observable<any> {
@@ -57,7 +57,7 @@ export class VideoService {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/remove/' + id, null, {headers: headers});
+    return this._http.get(this.url + 'video/remove/' + id, {headers: headers});
   }
 
 }
