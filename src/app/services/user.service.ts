@@ -31,7 +31,7 @@ export class UserService {
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    return this._http.post(this.url + 'user/create', params, {headers:headers});
+    return this._http.post(this.url + 'user/create', params, {headers: headers});
   }
 
   signup(user, getToken = null):Observable<any> {
@@ -43,7 +43,7 @@ export class UserService {
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
 
-    return this._http.post(this.url + 'user/login', params, {headers:headers});
+    return this._http.post(this.url + 'user/login', params, {headers: headers});
   }
 
   update(token, user):Observable<any> {
@@ -53,7 +53,7 @@ export class UserService {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.put(this.url + 'user/edit', params, {headers:headers});
+    return this._http.put(this.url + 'user/edit', params, {headers: headers});
   }
 
   getIdentity() {

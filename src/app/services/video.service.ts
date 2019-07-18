@@ -21,43 +21,43 @@ export class VideoService {
 
   createvideo(token, video):Observable<any> {
     let json = JSON.stringify(video);
-    let params = 'json='+json;
+    let params = 'json=' + json;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.post(this.url + 'video/new', params, {headers:headers});
+    return this._http.post(this.url + 'video/new', params, {headers: headers});
   }
 
   listvideo(token):Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/list', params, {headers:headers});
+    return this._http.get(this.url + 'video/list', null, {headers: headers});
   }
 
   getvideo(token, id):Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/detail/'+id, params, {headers:headers});
+    return this._http.get(this.url + 'video/detail/' + id, null, {headers: headers});
   }
 
   update(token, video):Observable<any> {
     let json = JSON.stringify(video);
-    let params = 'json='+json;
+    let params = 'json=' + json;
 
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.put(this.url + 'video/edit/' + video.id, params, {headers:headers});
+    return this._http.put(this.url + 'video/edit/' + video.id, params, {headers: headers});
   }
 
   deletevideo(token, id):Observable<any> {
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
       .set('Authorization', token);
 
-    return this._http.get(this.url + 'video/remove/'+id, params, {headers:headers});
+    return this._http.get(this.url + 'video/remove/' + id, null, {headers: headers});
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {UserService} from '../../services/user.service';
+import {VideoService} from '../../services/video.service';
 import {Video} from '../../models/video';
 import {User} from '../../models/user';
 
@@ -8,7 +9,7 @@ import {User} from '../../models/user';
   selector: 'app-video-new',
   templateUrl: './video-new.component.html',
   styleUrls: ['./video-new.component.css'],
-  providers: [UserService]
+  providers: [UserService, VideoService]
 })
 export class VideoNewComponent implements OnInit {
 
@@ -20,6 +21,7 @@ export class VideoNewComponent implements OnInit {
 
   constructor(
     private _userService: UserService,
+    private _videoService: VideoService,
     private _router: Router,
     private _route: ActivatedRoute,
   ) {
@@ -33,7 +35,19 @@ export class VideoNewComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(this.video);
+    this._videoService.createvideo(this.token, this.video).subscribe(
+      response => {
+        if(response && response.status == 'success') {
+          this.status = 'success';
+          this._router.navigate(['/inicio']);
+        } else {
+          this.status = 'error';
+        }
+      }, error => {
+        this.status = 'error';
+        console.error(error);
+      }
+    );
   }
 
 }
