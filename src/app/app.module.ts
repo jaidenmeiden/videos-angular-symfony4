@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {appRoutingProviders, routing} from './app.routing';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import {appRoutingProviders, routing} from './app.routing';
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { VideoNewComponent } from './components/video-new/video-new.component';
+
+import {IdentityGuard} from './services/identity.guard';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { VideoNewComponent } from './components/video-new/video-new.component';
     HttpClientModule
   ],
   providers: [
-    appRoutingProviders /*Importamos el provider*/
+    appRoutingProviders, /*Importamos el provider*/
+    IdentityGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
