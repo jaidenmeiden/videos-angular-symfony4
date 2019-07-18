@@ -32,4 +32,13 @@ export class UserService {
     return this._http.post(this.url + 'user/create', params, {headers:headers});
   }
 
+  login(user):Observable<any> {
+    let json = JSON.stringify(user);
+    let params = 'json='+json;
+
+    let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+
+    return this._http.post(this.url + 'user/create', params, {headers:headers});
+  }
+
 }
