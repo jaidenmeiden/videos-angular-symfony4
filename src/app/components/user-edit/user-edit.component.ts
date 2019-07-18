@@ -29,11 +29,14 @@ export class UserEditComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this._userService.register(this.user).subscribe(
+    this._userService.update(this.token, this.user).subscribe(
       response => {
-        if(response.status == 'success') {
+        if(response && response.status == 'success') {
           this.status = 'success';
-          form.reset();
+
+          this.identity = response.user;
+          this.user = response.user;
+          localStorage.setItem('identity', JSON.stringify(this.identity));
         } else {
           this.status = 'error';
         }
