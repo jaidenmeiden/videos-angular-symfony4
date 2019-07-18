@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  getThumb(url, size) {
+  getThumb(url, size = null) {
     var video, results, thumburl;
 
     if (url === null) {
