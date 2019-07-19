@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { VideoNewComponent } from './components/video-new/video-new.component';
 import { VideoEditComponent } from './components/video-edit/video-edit.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
 import {IdentityGuard} from './services/identity.guard';
 import {UserService} from './services/user.service';
@@ -25,7 +26,8 @@ import {UserService} from './services/user.service';
     LoginComponent,
     UserEditComponent,
     VideoNewComponent,
-    VideoEditComponent
+    VideoEditComponent,
+    VideoDetailComponent
   ],
   imports: [
     BrowserModule,

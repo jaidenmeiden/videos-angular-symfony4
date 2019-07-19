@@ -15,9 +15,9 @@
         <p class="card-text">{{video.description}}</p>
       </div>
       <div class="card-footer">
-        <a [routerLink]="['']" class="btn btn-success">Leer</a>
+        <a [routerLink]="['/video', video.id]" class="btn btn-success">Leer</a>
         <a [routerLink]="['/editar-favorito', video.id]" class="btn btn-warning ml-3">Editar</a>
-        <a [routerLink]="['']" class="btn btn-danger ml-3" data-toggle="modal" [attr.data-target]="'#borrarModal' + video.id">Borrar</a>
+        <a href="#" class="btn btn-danger ml-3" data-toggle="modal" [attr.data-target]="'#borrarModal' + video.id">Borrar</a>
         <div class="modal fade" id="{{'borrarModal' + video.id}}" tabindex="-1" role="dialog" [attr.aria-labelledby]="'borrarModal' + video.id + 'Label'" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
