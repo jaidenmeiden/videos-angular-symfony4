@@ -15,10 +15,12 @@ export class HomeComponent implements OnInit {
   public pageTitle: string;
   public identity;
   public token;
+  public status: string;
   public videos;
   public page;
   public prev_page;
   public next_page;
+  public number_pages;
 
   constructor(
     private _userService: UserService,
@@ -54,6 +56,19 @@ export class HomeComponent implements OnInit {
       response => {
         if(response && response.status == 'success') {
           this.videos = response.videos;
+
+          var number_pages = [];
+          for(var i = 1; i <= response.total_pages; i++) {
+            number_pages.push(i);
+          }
+          this.number_pages = number_pages;
+
+          /*
+          total_items_count: 10
+          page_actual: 1
+          items_per_page: 5
+          total_pages: 2
+          * */
         } else {
           this.status = 'error';
         }
