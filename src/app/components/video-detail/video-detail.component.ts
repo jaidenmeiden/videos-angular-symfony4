@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {UserService} from '../../services/user.service';
 import {VideoService} from '../../services/video.service';
 import {Video} from '../../models/video';
@@ -23,6 +24,7 @@ export class VideoDetailComponent implements OnInit {
     private _videoService: VideoService,
     private _router: Router,
     private _route: ActivatedRoute,
+    private _sanitizer: DomSanitizer
   ) {
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -48,6 +50,18 @@ export class VideoDetailComponent implements OnInit {
         }
       );
     });
+  }
+
+  getVideoIframe(url) {
+    var video, results;
+
+    if (url === null) {
+      return '';
+    }
+    results = url.match('[\\?&]v=([^&#]*)');
+    video   = (results === null) ? url : results[1];
+
+    return this._sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + video);
   }
 
 }
