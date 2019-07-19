@@ -17,7 +17,26 @@
       <div class="card-footer">
         <a [routerLink]="['']" class="btn btn-success">Leer</a>
         <a [routerLink]="['']" class="btn btn-warning ml-3">Editar</a>
-        <a [routerLink]="['']" class="btn btn-danger ml-3">Borrar</a>
+        <a [routerLink]="['']" class="btn btn-danger ml-3" data-toggle="modal" [attr.data-target]="'#borrarModal' + video.id">Borrar</a>
+        <div class="modal fade" id="{{'borrarModal' + video.id}}" tabindex="-1" role="dialog" [attr.aria-labelledby]="'borrarModal' + video.id + 'Label'" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="{{'borrarModal' + video.id + 'Label'}}">Seguro que quieres borrar este video?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Vas a borrar para siempre el video: {{video.title}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deletevideo(video.id)">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
