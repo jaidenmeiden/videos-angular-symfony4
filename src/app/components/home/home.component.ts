@@ -63,6 +63,18 @@ export class HomeComponent implements OnInit {
           }
           this.number_pages = number_pages;
 
+          if(page >= 2) {
+            this.prev_page = page - 1;
+          } else {
+            this.prev_page = 1;
+          }
+
+          if(page < response.total_pages) {
+            this.next_page = page + 1;
+          } else {
+            this.next_page = response.total_pages;
+          }
+
           /*
           total_items_count: 10
           page_actual: 1
