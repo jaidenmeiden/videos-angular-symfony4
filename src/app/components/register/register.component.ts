@@ -6,7 +6,7 @@ import {UserService} from '../../services/user.service';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  providers: [UserService]
+  providers: [UserService]/*Se inyecta la dependencia*/
 })
 export class RegisterComponent implements OnInit {
 
